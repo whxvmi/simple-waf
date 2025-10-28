@@ -122,7 +122,7 @@ func logAttack(remoteIP, reason string, r *http.Request, bodySnippet string) {
 	log.Printf("ATTACK BLOCKED: %s - %s - bodySnippet=%q\n", remoteIP, reason, bodySnippet)
 }
 
-// profit: search for real IP (X-Forwarded-For varsa)
+// profit: search for real IP (X-Forwarded-For)
 func clientIP(r *http.Request) string {
 	xff := r.Header.Get("X-Forwarded-For")
 	if xff != "" {
